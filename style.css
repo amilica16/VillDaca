@@ -60,10 +60,10 @@ body {
       height: 100%;
       margin-bottom: 10px;
   }
-  .carousel-control.right, .carousel-control.left {
+/*  .carousel-control.right, .carousel-control.left {
       background-image: none;
       color: #f4511e;
-  }
+  }*/
   .carousel-indicators li {
       border-color: #f4511e;
   }
@@ -153,6 +153,13 @@ body {
       -webkit-animation-duration: 1s;
       visibility: visible;
   }
+
+#pic .carousel-inner.onebyone-carosel { margin: auto; width: 90%; }
+#pic .onebyone-carosel .active.left { left: -33.33%; }
+#pic .onebyone-carosel .active.right { left: 33.33%; }
+#pic .onebyone-carosel .next { left: 33.33%; }
+#pic .onebyone-carosel .prev { left: -33.33%; }
+
   @keyframes slide {
     0% {
       opacity: 0;

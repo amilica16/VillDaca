@@ -7,7 +7,7 @@
  * Time: 4:09 PM
  */
 class SessionRepository extends BaseRepository {
-    
+
     public function getSessionByUserId($userId){
         $sql = "select *
                 from SESSION sess

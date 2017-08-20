@@ -20,9 +20,22 @@ includeAllFiles("repository");
 includeAllFiles("service");
 includeAllFiles("util");
 
-if(isset($_POST)){
-    $requestBody = json_decode($_POST["request_body"]);
 
+if(isset($_POST)){
+    $requestBody = json_decode($_POST["requestBody"]);
+    $userId = $requestBody["userId"];
+    $token = $requestBody["token"];
+    $serviceName = $requestBody["serviceName"];
+
+    $sessionService = ServiceFactory::getRepository("session");
+    if($sessionService->validateSession($token)){
+        
+    } else {
+        // token is not valid...
+        // unauthorized
+        http_response_code(401);
+    }
 } else {
+    // request is not POST so... bad request
     http_response_code(400);
 }
